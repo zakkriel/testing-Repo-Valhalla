@@ -25,3 +25,17 @@ full | harness/product.md | reconcile product behavior before tax change
 full | harness/engineering.md | reconcile implementation constraints before tax change
 full | harness/read-log.md | inspect existing read evidence before appending task reads
 full | README.md | confirm execution commands and project scope
+partial | src/cli.mjs | inspect lines 1–2 to identify imports before independent tax verification
+full | [redacted external instruction A] | follow collaboration and evidence rules for independent verification
+full | [redacted external instruction B] | follow shell wrapper instructions for independent verification
+full | src/cli.mjs | verify optional tax calculation and default output
+full | src/invoice.mjs | verify subtotal and money formatting implementation
+full | AGENTS.md | identify repository verification and read evidence requirements
+full | README.md | confirm existing execution commands
+full | PROOF.md | reconcile existing proof claims with verification scope
+full | harness/testing.md | identify existing acceptance checks and gaps
+full | harness/engineering.md | reconcile tax implementation understanding
+full | harness/product.md | identify required default and tax behavior
+full | harness/read-log.md | inspect existing evidence before recording verification reads
+full | test/invoice.test.mjs | inspect all six existing checks including aggregate rounding
+full | sample.json | confirm sample invoice data

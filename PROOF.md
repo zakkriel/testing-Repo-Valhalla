@@ -31,3 +31,11 @@ Expected: six passing tests; `Total: $6.00`; `Total: $6.60`.
 ## Limits
 
 One owner-provided public test repository with a synthetic app. Separate conversation isolation was exercised, not desktop restart or automatic startup-cwd discovery. Input validation beyond tax rates and arithmetic outside JavaScript's safe numeric range remain unspecified. Repeat onboarding was tested on identical content, not conflicting existing harnesses or concurrent user edits. No browser/login automation, global installation, paid service, or production project changes were used for this sequence.
+
+## Privacy instruction repair and fresh follow-up
+
+The original installed AGENTS.md did contain redaction guidance; it was compressed into a relative-path-or-redacted-identifier sentence. The failed agent used `external:` before literal private paths. The trace establishes the output failure, not the agent's internal reasoning. The repair makes the rule explicit: no host-absolute private external paths or private instruction contents in harness entries or purposes; use neutral identifiers and keep exact mappings only outside the repository. The source skill requires that privacy clause to be copied unchanged into installed AGENTS.md.
+
+A new fresh coding task reviewed the existing tax behavior without a harness/logging reminder. It began with a two-line import inspection, read the implementation/context/instructions, ran all six existing tests and both sample commands, and saved verification results without changing runtime code. Its 13 full-file receipts and one partial receipt were cross-checked against complete untruncated read actions. A command reporting a missing package.json still delivered both existing source files completely; no read receipt was claimed for the missing file.
+
+The new entries used redacted external identifiers when first written. Their exact path mapping was saved outside the target repository and matched privately to the recorded reads. The new log/results were published unchanged, with no publication-time path substitution. The original failure and corrected historical entries remain preserved above and in repository history. This demonstrates privacy compliance in this bounded follow-up; it does not guarantee every future agent will follow instructions.
