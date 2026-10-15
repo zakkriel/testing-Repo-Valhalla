@@ -1,0 +1,37 @@
+# Product validation handoff
+
+Status: CONFIRMED against the synthetic fixture by a separately assigned independent fixture-owner reviewer on 2026-10-14. This confirms the updated Product understanding only against the test oracle; it is not Brian's intent, real-owner confirmation, or production approval. Earlier pending statements below are preserved as historical handoff records; the final verdict supersedes them.
+
+Role and source: explicitly assigned synthetic test-owner, using only [PRODUCT-OWNER-FIXTURE.md](../PRODUCT-OWNER-FIXTURE.md) for intended behavior. The fixture has now been read.
+
+1. Is this product still solely a synthetic onboarding/fresh-agent proof CLI, with the documented subtotal and optional aggregate-rounded tax behavior as the intended baseline? If it serves actual invoice operators, who are they and what outcome should this CLI support?
+   Answer (fixture-sourced): Its intended users are learners and developers practicing local invoice-estimate workflows. Their outcome is exploring how line-item prices and percentage adjustments affect a single illustrative dollar total without changing source invoice data. This is a local teaching tool; solely serving onboarding evaluators or fresh-agent proof is too narrow an intended audience. Actual invoice operators and production use are not established by this fixture. No accounting, invoicing, payment or tax advice, sending, persistent invoice edits, networking, dependencies or service is wanted. Preserve source input, integer cents, two displayed decimal places and existing default output when no adjustment flag is supplied. Tax is a nonnegative finite percentage, rounded once on the taxable subtotal. Whether the current code implements each capability must remain grounded in code and tests; this role has not independently checked those observations.
+2. Should invoice validation remain outside the product scope, or are there intended rules for malformed/missing fields, negative or fractional prices/quantities, and values outside safe numeric arithmetic? If in scope, which inputs must be accepted or rejected?
+   Answer (fixture-sourced): Supported fixture input is an array of nonnegative safe integer `unitCents` values and nonnegative integer `quantity` values. The fixture does not specify consistent acceptance/rejection behavior or errors for malformed invoices, missing fields, negative/fractional values, values outside that domain, or unsafe aggregate arithmetic. Whether broader invoice validation belongs in implementation scope is unspecified. Current validation may be incomplete; neither universal support nor consistent rejection of arbitrary malformed invoices may be claimed.
+
+Additional material fixture rule: Any future price reduction lowers the taxable subtotal before tax. Round each aggregate reduction once to cents, then round tax once on the remaining subtotal; a reduction cannot make the total negative. This is intended future behavior, not evidence that a reduction feature exists. New reduction flags, allowed input range and error behavior belong in a proposed feature brief, not owner-approved implementation scope. Multiple flags and extra arguments are unspecified by the fixture.
+
+Confirmation: pending. `harness/product.md` still contains the prior audience inference and unresolved input-domain assumptions. Its intended understanding must first be reconciled with these answers by the responsible Product role. The synthetic fixture-owner must then inspect the updated document and separately confirm or reject its intended understanding with reasons. No fixture confirmation is issued here; no real-owner confirmation is claimed. Stop before a feature brief or implementation until validation is resolved. No new feature request has been supplied for this handoff.
+
+Evidence boundaries: The previously recorded six passing tests and 10% sample result are historical onboarding evidence, not independently verified by this fixture-owner. Product understanding and app code were not edited in this task.
+
+## Product reconciliation handoff
+
+The responsible Product role has now updated [product understanding](product.md) from the recorded answers, correcting the audience inference, specifying the fixture input domain, separating observed implementation from intended future reductions, and retaining unspecified validation/argument policies. The earlier statement that the document still contains those prior assumptions describes the pre-reconciliation state. Original answers and evidence boundaries above remain preserved.
+
+Confirmation remains pending for a separate synthetic fixture-owner review of the updated document against the fixture, with reasons for confirmation or rejection. This Product reconciliation did not read the fixture directly and issues no fixture or real-owner approval. Stop before a feature brief or implementation.
+
+
+## Independent synthetic fixture-owner verdict — 2026-10-14
+
+Verdict: CONFIRM the updated [Product understanding](product.md) against [PRODUCT-OWNER-FIXTURE.md](../PRODUCT-OWNER-FIXTURE.md) and the inspected app evidence. This review was separately assigned after Product reconciliation. It is fixture validation only, never Brian or real-owner confirmation.
+
+Reasons:
+- Intended users and outcome now match the fixture: learners and developers exploring local invoice estimates without changing source data. The teaching-tool boundaries and absence of established production adoption are accurately retained.
+- The supported fixture input domain, stable money/default-output rules and finite nonnegative tax intent match the fixture. Broader malformed-input handling, unsafe arithmetic, multiple flags and extra arguments remain explicitly unresolved.
+- Future reductions correctly lower the taxable subtotal, round each aggregate reduction once before tax, and cannot make totals negative. Product accurately separates this future intent from implementation and leaves flags, range and errors for a later proposed brief.
+- Complete inspection of `src/invoice.mjs`, `src/cli.mjs`, `sample.json` and `test/invoice.test.mjs` supports the observed subtotal, two-decimal formatting, unchanged-input behavior, tax ordering/rounding, rejected tax-rate cases and absence of a reduction feature. A fresh `node --test` run passed all six existing tests, including default/sample tax output and aggregate rounding. README and PROOF support the stated synthetic repository purpose and historical evidence boundaries.
+
+Coverage and limits: reviewed the complete fixture, updated Product document, validation handoff, repository instructions, read-log, README, PROOF, both app source files, sample and all existing tests. No specific Product inaccuracies were found. The external workflow clone/revision acquisition claim was not independently reproduced; it is provenance reported by the Product reconciliation, not fixture intent or app behavior certified by this verdict. No browser tools were used. App code, tests, Engineering/Testing contexts and Product text were preserved. No feature brief or implementation is approved by this verdict.
+
+Read audit: each of this review's 13 complete file reads has a matching receipt in `harness/read-log.md`; no unmatched full-read claims or actions were identified. Private external instruction identifiers retain exact mappings only in the review session's private work directory outside this repository. Script access used to append this verdict and receipts is not claimed as an additional complete read.

@@ -14,3 +14,11 @@ Append each complete file read, including context and onboarding source/instruct
 
 Read-log privacy: Never write a host-absolute private external path or private instruction contents into harness files, including entry purposes. Use repository-relative paths for target files. For external private reads, use a neutral identifier such as `[redacted external instruction A]`; `external:` followed by a literal private path is not redaction. Keep the exact identifier-to-path mapping only in the coding session's private work directory outside the target repository. Check each entry before appending it. Preserve auditability through that private mapping and the recorded read action.
 <!-- valhalla-lite:end -->
+
+<!-- valhalla-product:start -->
+## valhalla-product discovery
+
+Before product planning, read [product understanding](harness/product.md) and [validation handoff](harness/product-validation.md). Reconcile their evidence with the requested work and confirmation status. Establish the intended user outcome, observable acceptance conditions and unresolved decisions before coding. Separate observed behavior from owner intent; obtain actual answers and confirmation before treating pending decisions as settled. Product onboarding ends at validation; a subsequent confirmed planning task may save a compact feature brief under harness/ and must stop before implementation. Preserve existing instructions and append complete read receipts to harness/read-log.md.
+
+Read-log privacy: Never write a host-absolute private external path or private instruction contents into harness files, including entry purposes. Use repository-relative paths for target files. For external private reads, use a neutral identifier such as `[redacted external instruction A]`; `external:` followed by a literal private path is not redaction. Keep the exact identifier-to-path mapping only in the coding session's private work directory outside the target repository. Check each entry before appending it. Preserve auditability through that private mapping and the recorded read action.
+<!-- valhalla-product:end -->
